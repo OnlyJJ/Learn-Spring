@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd 
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd" >
+
+	<!-- 启用MVC注解 -->
+	<mvc:annotation-driven />
+	<!-- 配置扫描路径 -->
+	<context:component-scan base-package="com.learn.controller" />
+
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"  
+       p:defaultEncoding="UTF-8"  
+       p:maxUploadSize="5400000"  
+    >  
+
+    </bean>   
+
+    <!-- jsp视图解析器 -->
+	<bean id="jspView" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<!-- 前缀 -->
+		<property name="prefix" value="/" />
+		<!-- 后缀 -->
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<mvc:resources location="/fileUpload/" mapping="/fileUpload/**"/>
+	<mvc:resources location="/"  mapping="/**" />
+
+
+	<!-- 拦截器配置 -->
+    <mvc:interceptors>
+		<!-- 
+	    <mvc:interceptor>
+			<mvc:mapping path="/U**/**"/>
+			<bean name="analyzeReqParameterInterceptor" class="com.lm.live.web.listeners.AnalyzeReqParameterInterceptor"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.jiujun.shows.common.springMVCInterceptor.LoginSessionInterceptor">
+				<property name="notfilterUrls">
+					<list>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+		 -->
+	</mvc:interceptors>
+	
+</beans>
