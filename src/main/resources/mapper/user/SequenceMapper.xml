@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.learn.dao.SequenceMapper" >
+  <resultMap id="vo" type="com.learn.entity.SequenceEntity" >
+    <result column="name_" property="name" jdbcType="VARCHAR" />
+    <result column="current_value_" property="currentValue" jdbcType="INTEGER" />
+    <result column="increment_" property="increment" jdbcType="INTEGER" />
+    <result column="desc_" property="desc" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="selectByName" resultMap="vo">
+  	select * from sequence where name_ = #{name}
+  </select>
+</mapper>
