@@ -36,8 +36,9 @@
 	<mvc:resources location="/"  mapping="/**" />
 
 
-	<!-- 拦截器配置 -->
+	<!-- 拦截器配置 
     <mvc:interceptors>
+    -->
 		<!-- 
 	    <mvc:interceptor>
 			<mvc:mapping path="/U**/**"/>
@@ -52,7 +53,7 @@
 				</property>
 			</bean>
 		</mvc:interceptor>
-		 -->
 	</mvc:interceptors>
+		 -->
 	
 </beans>

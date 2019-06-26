@@ -1,4 +1,4 @@
-package com.learn.service;
+package com.xy.learn.service;
 
 public interface CommonService {
 

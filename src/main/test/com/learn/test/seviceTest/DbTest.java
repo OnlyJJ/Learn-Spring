@@ -1,29 +1,36 @@
 package com.learn.test.seviceTest;
 
+import javax.annotation.Resource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.learn.entity.SequenceEntity;
-import com.learn.service.SequenceService;
+import com.xy.learn.entity.UserInfoEntity;
+import com.xy.learn.service.UserInfoService;
+import com.xy.learn.service.impl.UserInfoServiceImpl;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath*:spring/spring-context.xml"})
 public class DbTest {
-	@Autowired
-	private SequenceService sequenceService;
+	@Resource
+	private UserInfoService userInfoService;
 	
 	@Test
 	public void test() {
-		SequenceEntity seq = sequenceService.find("service_type");
-		if(seq != null) {
-			System.err.println(seq.getCurrentValue());
-		} else {
-			System.err.println("null");
-		}
+		// 查找用户
+//		UserInfoEntity userInfo = userInfoService.queryUserInfo("102323");
+//		if(userInfo != null) {
+//			System.err.println(userInfo.getNickName());
+//		} else {
+//			System.err.println("null...");
+//		}
+		// 测试注册用户
+//		UserInfoEntity userInfo = userInfoService.regerit("abc", "123", "123", "1", "1");
+		// 登录测试
+		userInfoService.loginByUserId("672507", "123");
 	}
 	
 }

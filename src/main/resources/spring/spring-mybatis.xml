@@ -8,6 +8,7 @@
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:property-placeholder location="classpath:db.properties" ignore-unresolvable="true"/>
+	
 	<bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
         <property name="statementExecutableSqlLogEnable" value="true" />
  	</bean>
@@ -51,7 +52,7 @@
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.learn" />
+		<property name="basePackage" value="com.xy.learn.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	
