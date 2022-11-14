@@ -17,7 +17,7 @@
 		<commons-codec.version>1.10</commons-codec.version>
 		<commons.httpclient.version>3.1</commons.httpclient.version>
 		<druid.version>1.0.31</druid.version>
-		<spring.version>4.2.5.RELEASE</spring.version>
+		<spring.version>4.2.7.RELEASE</spring.version>
 		<fastjson.version>1.2.33</fastjson.version>
 		<jedis.version>2.9.0</jedis.version>
 		<javax.version>7.0</javax.version>
